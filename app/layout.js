@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import { AuthProvider } from "./context/AuthContext";
 import "./globals.css";
 import { connectMongodb } from "./services";
 
@@ -21,8 +22,11 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body
       >
-        <Navbar></Navbar>
-        {children}
+        <AuthProvider>
+            <Navbar></Navbar>
+            {children}
+        </AuthProvider>
+     
       </body>
     </html>
   );

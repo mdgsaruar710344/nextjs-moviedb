@@ -18,7 +18,7 @@ phone:{
   type: String
 },
 wishlist:{
-  required:true,
+  required:false,
   type: Array
 },
 });

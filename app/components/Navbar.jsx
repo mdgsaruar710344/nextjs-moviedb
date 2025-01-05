@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import UserState from "./UserState";
 
 const Navbar = () => {
   return (
@@ -15,7 +16,8 @@ const Navbar = () => {
        </Link>
       <Link href={'/'}>Home</Link>
       <Link href={'/compare'}>Compare </Link>
-      <Link href={'/wishlist'}>WishList</Link>
+     
+      <UserState></UserState>
     </div>
   );
 };
