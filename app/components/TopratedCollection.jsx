@@ -4,7 +4,7 @@ const TopRatedCollection =async () => {
   const bufferPopular=await fetch('http://localhost:3000/api/top-rated');
   const topratedData=await bufferPopular.json();
   const topratedArray=topratedData?.data?.results;
-  console.log(topratedArray);
+  // console.log(topratedArray);
 
 
   return (

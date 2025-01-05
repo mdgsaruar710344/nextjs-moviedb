@@ -4,7 +4,7 @@ const PopularCollection =async () => {
   const bufferPopular=await fetch('http://localhost:3000/api/popular');
   const popularData=await bufferPopular.json();
   const popularArray=popularData?.data?.results;
-  console.log(popularArray);
+  // console.log(popularArray);
 
 
   return (

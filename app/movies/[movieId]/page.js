@@ -7,7 +7,7 @@ const MovieDetailsPage = async ({params}) => {
     const bufferMovieDetails= await fetch(`http://localhost:3000/api/movie/${id}`);
     const DetailsData=await bufferMovieDetails.json();
    
-    console.log(DetailsData);
+    // console.log(DetailsData);
     const title=DetailsData?.SingleMovieData?.title;
     const photo=DetailsData?.SingleMovieData?.poster_path;
     const overview=DetailsData?.SingleMovieData?.overview;

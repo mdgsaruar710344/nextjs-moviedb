@@ -4,7 +4,7 @@ const TrendingCollection =async () => {
   const bufferPopular=await fetch('http://localhost:3000/api/trending');
   const trendingData=await bufferPopular.json();
   const trendingArray=trendingData?.data?.results;
-  console.log(trendingArray);
+  // console.log(trendingArray);
 
 
   return (
