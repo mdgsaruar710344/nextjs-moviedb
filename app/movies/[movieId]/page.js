@@ -1,3 +1,4 @@
+import AddtoWishlist from "@/app/components/AddtoWishlist";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ const MovieDetailsPage = async ({params}) => {
     const id=params?.movieId;
     const bufferMovieDetails= await fetch(`http://localhost:3000/api/movie/${id}`);
     const DetailsData=await bufferMovieDetails.json();
-   
+    const movieId=id;
     // console.log(DetailsData);
     const title=DetailsData?.SingleMovieData?.title;
     const photo=DetailsData?.SingleMovieData?.poster_path;
@@ -29,7 +30,7 @@ const MovieDetailsPage = async ({params}) => {
       <p className="py-6">
     {overview && overview}
       </p>
-      
+      <AddtoWishlist movieId={movieId}></AddtoWishlist>
     </div>
   </div>
 </div>

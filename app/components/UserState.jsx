@@ -15,7 +15,7 @@ const UserState = () => {
       {auth && auth.email}
       {auth&& <> <button onClick={handleLogOut}>LogOut</button> </>}
       {!auth&& <> <Link href={'/login'}>Login</Link> </>}
-      {auth&& <> <Link href={'/wishlist'}>WishList</Link></>}
+      {auth&& <> <Link href={`/wishlist?userId=${auth._id}`}>WishList</Link></>}
     </div>
   );
 };
