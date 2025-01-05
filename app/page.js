@@ -10,7 +10,7 @@ export default async function Home({searchParams}) {
    let term;
  const params= new URLSearchParams(searchParams);
  const queryValue=params.get('query');
- console.log(queryValue);
+//  console.log(queryValue);
    
     if(queryValue ){
         term=true;
