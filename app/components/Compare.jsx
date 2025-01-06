@@ -20,7 +20,7 @@ const Compare = ({children}) => {
       {container&& container.length};
       <br></br>
       <button onClick={handleAddNewMovie}>Add New Movie</button>
-      {container.length>0 && container.map((singlecontainer,idx)=><SingleContainer key={idx} container={container} setContainer={setContainer} singlecontainer={singlecontainer}>
+      {container.length>0 && container.map((singlecontainer,idx)=><SingleContainer key={singlecontainer} container={container} setContainer={setContainer} singlecontainer={singlecontainer}>
        {children}
       </SingleContainer>)}
     </div>
