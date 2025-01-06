@@ -1,5 +1,8 @@
 
 "use client"
+
+import Modal from "./Modal";
+
 const SingleContainer = ({children,setContainer,singlecontainer,container}) => {
 const handleRemoveMovie=()=>{
 const updatedArray= container.filter(item=>item!==singlecontainer);
@@ -10,6 +13,7 @@ console.log('id no:',singlecontainer);
     <div className="border-red-500 border-2">
       This is single container!
 <br></br>
+<Modal>{children}</Modal>
 {children}
       <br></br>
       <button onClick={handleRemoveMovie}>Close</button>

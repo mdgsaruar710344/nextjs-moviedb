@@ -42,3 +42,9 @@ export async function handlefindUserbyId(id){
  const userFound=await findUserById(id);
  return userFound;
 }
+
+export async function handlefindMovieById(id){
+  const bufferMovieDetails= await fetch(`http://localhost:3000/api/movie/${id}`);
+  const DetailsData=await bufferMovieDetails.json();
+return DetailsData;
+}
