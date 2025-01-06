@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import  { useState } from "react";
 import { findMovieByQuery, handlefindMovieById } from "../actions";
 import MiniMoviecard from "./MiniMovieCard";
+import Image from "next/image";
 
 const Modal = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,16 @@ handlePreModal();
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div>
         {PreModalDetails?.SingleMovieData?.title&& PreModalDetails.SingleMovieData.title}
+        {PreModalDetails?.SingleMovieData?.title&& <div>
+               <Image
+                     src={`https://image.tmdb.org/t/p/w200${PreModalDetails.SingleMovieData.poster_path}`}
+                     alt="movie-card" 
+                     width={200}
+                     height={200}
+                  >
+                    </Image> 
+          </div>}
+     
       </div>
       {/* Trigger Button */}
       <button
@@ -73,7 +84,7 @@ handlePreModal();
 
             {/* Modal Content */}
             <h1 className="text-2xl font-bold mb-4 text-center">Beautiful Modal</h1>
-            <p className="text-gray-700 text-center">
+         
               This is a clean and elegant modal design created with Tailwind CSS.
               <form onChange={handleSearchInput}>
                 <input type="text" name="term" required/>
@@ -84,7 +95,7 @@ handlePreModal();
               {search?.length>0 && search.map((movie,idx)=> <div key={idx}><MiniMoviecard preModal={preModal} setPreModal={setPreModal} setIsOpen={setIsOpen} movie={movie}></MiniMoviecard></div>)}
 
               </div>
-            </p>
+            
           </div>
         </div>
       )}
